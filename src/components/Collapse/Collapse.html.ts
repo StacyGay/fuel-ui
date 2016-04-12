@@ -1,3 +1,4 @@
+export let collapseHtml = `
 <p>
   <button class="btn btn-primary" type="button" aria-expanded="false" (click)="toggleCollapse()">
     {{buttonText}}
@@ -9,3 +10,4 @@
     <ng-content></ng-content>
   </div>
 </div>
+`;

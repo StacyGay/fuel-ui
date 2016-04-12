@@ -1,4 +1,5 @@
-<div class="modal" [ngClass]="{customFadeIn: displayed}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [style.display]="displayed ? 'block' : 'none'">
+export let modalHtml = `
+<div class="modal" [ngClass]="{modalFadeIn: displayed}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [style.display]="displayed ? 'block' : 'none'">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,3 +14,4 @@
     </div>
 </div>
 <div class="modal-backdrop" [ngClass]="{fade: displayed, in: displayed}" [style.display]="displayed ? 'block' : 'none'"></div>
+`;

@@ -8,7 +8,7 @@ var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-var inlineNg2Template = require('gulp-inline-ng2-template');
+var sassGlob = require('gulp-sass-glob');
 var merge = require('merge2');
 var webserver = require('gulp-webserver');
 var Builder = require('systemjs-builder');
@@ -20,15 +20,6 @@ var paths = {
     dest: 'bin',
     bundle: 'bundles'
 };
-
-var inlineTemplateConfig = {
-    base: paths.dest,
-    html: true,
-    css: true,
-    target: 'es5',
-    indent: 2
-}
-
 
 gulp.task('hello', function () {
     console.log('HELLO!');
@@ -52,7 +43,7 @@ gulp.task('cleanScripts', function () {
 
 gulp.task('clean', ['cleanSass','cleanViews', 'cleanScripts']);
 
-gulp.task('scripts', ['cleanScripts', 'views', 'sass'], function () {
+gulp.task('scripts', ['cleanScripts'], function () {
     var tsProject = typescript.createProject('tsconfig.json');
     
     var sourceFiles = [
@@ -65,7 +56,6 @@ gulp.task('scripts', ['cleanScripts', 'views', 'sass'], function () {
 
     var tsResult = gulp
         .src(sourceFiles)
-        .pipe(inlineNg2Template(inlineTemplateConfig))
         .pipe(sourcemaps.init())
         .pipe(typescript(tsProject));
 
@@ -88,7 +78,7 @@ gulp.task('copyRootFiles', ['scripts'], function() {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('bundle', ['copyRootFiles','scripts'], function() {    
+gulp.task('bundle', ['copyRootFiles','scripts', 'sass'], function() {    
     // copy
     
     // optional constructor options
@@ -115,6 +105,7 @@ gulp.task('views', ['cleanViews'], function () {
 gulp.task('sass', ['cleanSass'], function () {
     return gulp.src(paths.source + '/**/*.{scss,sass}')
         //.pipe(sourcemaps.init())
+        .pipe(sassGlob())
         .pipe(sass({
             errLogToConsole: true
         }).on('error', sass.logError))
@@ -146,7 +137,7 @@ gulp.task('watch', function () {
     gulp.watch(paths.source+'/**/*.*', ['scripts']);
 });
 
-gulp.task('build', ['cleanSass', 'cleanScripts', 'cleanViews', 'sass', 'views', 'scripts', 'bundle']);
+gulp.task('build', ['cleanSass', 'cleanScripts', 'cleanViews', 'sass', 'views', 'scripts']);
 
 gulp.task('default', function(){
 	runSequence(

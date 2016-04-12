@@ -1,34 +1,16 @@
+export let datePickerHtml = `
+<div class="input-group date-picker-input-group" (click)="showCalendar($event)">
+	<input type="text" class="form-control"
+    [(ngModel)]="inputDate" #dateField readonly
+        placeholder="{{label}}" />
+	<span class="input-group-addon" [class.input-group-addon-focus]="dateField.focus">
+		<i class="fa fa-calendar"></i>
+	</span>
+</div>
+
 <div class="date-picker-overlay" aria-hidden="true"
     *ngIf="calendarDisplayed" 
     (click)="hideCalendar()">
-</div>
-
-<div class="form-group">
-    <label for="startDate">{{startLabel}}</label>
-    <div class="input-group" 
-        (click)="showCalendar($event)"
-        (click)="focusStartDate()">
-        <input type="text" class="form-control" name="startDate"
-            [(ngModel)]="inputStartDate" #dateField1 
-            placeholder="{{startLabel}}" readonly />
-        <span class="input-group-addon" [class.input-group-addon-focus]="dateField1.focus">
-            <i class="fa fa-calendar"></i>
-        </span>
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="endDate">{{endLabel}}</label>
-    <div class="input-group" 
-        (click)="showCalendar($event)"
-        (click)="focusEndDate()">
-        <input type="text" class="form-control" name="endDate"
-            [(ngModel)]="inputEndDate" #dateField2 
-            placeholder="{{endLabel}}" readonly />
-        <span class="input-group-addon" [class.input-group-addon-focus]="dateField2.focus">
-            <i class="fa fa-calendar"></i>
-        </span>
-    </div>
 </div>
 
 <div class="date-picker-component" *ngIf="calendarDisplayed">
@@ -40,16 +22,7 @@
             </button>
             <div class="date-range pull-left input-group">
                 <input type="text" class="form-control text-xs-center" 
-                    [class.target]="checkStartDateTarget()"
-                    (click)="focusStartDate()"
-                    id="startDate" [(ngModel)]="inputStartDate" readonly 
-                    placeholder="{{startLabel}}" />
-                <span class="input-group-addon"> - </span>
-                <input type="text" class="form-control text-xs-center" 
-                    [class.target]="checkEndDateTarget()"
-                    (click)="focusEndDate()"
-                    id="endDate" [(ngModel)]="inputEndDate" readonly 
-                    placeholder="{{endLabel}}" />
+                    id="startDate" [(ngModel)]="inputDate" readonly />
             </div>
             <button type="button" class="btn btn-secondary pull-right"
                 (click)="scrollNextMonth()" [class.button-disable]="disableNext()">
@@ -82,10 +55,7 @@
                     [minDate]="minDate" [maxDate]="maxDate"
                     [dateFilter]="dateFilter"
                     [currentMonth]="month" 
-                    [(selectedDate)]="selectedDate"
-                    [(startDate)]="startDate"
-                    [(endDate)]="endDate"
-                    [dateTarget]="_dateTarget" 
+                    [(selectedDate)]="selectedDate" 
                     (selectedDate)="hideCalendar()">
                     {{i}}
                 </date-picker-calendar>
@@ -93,3 +63,4 @@
         </div>
     </div>
 </div>
+`;

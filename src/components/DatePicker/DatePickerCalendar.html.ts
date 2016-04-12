@@ -1,4 +1,4 @@
-<div class="text-center py">
+export let datePickerCalendarHtml = `<div class="text-center py date-picker-calendar">
 	<table class="table m-a-0">	
 		<tbody>
             <tr *ngIf="showMonth">
@@ -20,3 +20,4 @@
 		</tbody>
 	</table>
 </div>
+`;

@@ -5,10 +5,11 @@ import {MapToIterablePipe} from "../../pipes/MapToIterable/MapToIterable"
 import {FormatPipe} from "../../pipes/Format/Format"
 import {TableSortableColumn} from "./TableSortableColumn";
 import {TableSortableSorting} from "./TableSortableSorting";
+import {tableSortableHtml} from "./tableSortable.Html";
 
 @Component({
   selector: 'table-sortable',
-  templateUrl: 'components/TableSortable/TableSortable.html',
+  template: tableSortableHtml,
   directives: [CORE_DIRECTIVES],
   pipes: [OrderByPipe, JsonPipe, MapToIterablePipe, FormatPipe]
 })

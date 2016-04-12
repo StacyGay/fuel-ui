@@ -1,9 +1,10 @@
 @import "../../styles/bourbon";
 
 $duration: 1s;
-
-.alertFadeIn{
-  @include animation-name(fadeIn);
-  @include animation-duration($duration);
-  @include animation-timing-function(ease);
+.fui-alert {
+    .alertFadeIn{
+        @include animation-name(fadeIn);
+        @include animation-duration($duration);
+        @include animation-timing-function(ease);
+    }   
 }

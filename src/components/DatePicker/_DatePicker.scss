@@ -44,7 +44,7 @@
     }
 }
 
-table {
+table.days-of-week {
     font-size: .75rem;
     
     @include mobile-only {
@@ -52,19 +52,18 @@ table {
     }
 }
 
-.input-group {
+.date-picker-input-group {
     z-index: 110;
+    input:read-only {
+        background-color: $input-bg;
+    } 
+
+    .input-group-addon {
+        background-color: $input-bg;
+    }
 }
 
-input:read-only {
-    background-color: $input-bg;
-} 
-
-.input-group-addon {
-    background-color: $input-bg;
-}
-
-header {
+.date-picker-component header {
 	position: relative;
 	top: 0;
 	left: 0;
@@ -101,8 +100,9 @@ header {
         }
     }
     
-    button:active {
-        background-color: $input-bg-disabled;
+    button:active, button:target, button:hover, button:visited {
+        background-color: $input-bg !important;
+        color: $brand-primary !important; 
     }
     
     .button-disable {
@@ -156,33 +156,14 @@ header {
     }
 }
 
-.prev-month, .next-month {
-	position: absolute;
-	top: 0;
-	display: inline-block;
-	z-index: 100;
-	margin-top: .2rem;
-	.btn-sm {
-		padding: .1rem .7rem;
-	}
-}
-
-.prev-month {
-	left: 0;
-	margin-left: 4%;
-}
-
-.next-month {
-	right:0;
-	margin-right: 4%;
-}
-
-.container {
-    height: 100%;
-}
-
-.calendar-container {    
-    @include mobile-only {
-        height: 91%;
+.date-picker-component {
+    .container {
+        height: 100%;
+    }
+    
+    .calendar-container {    
+        @include mobile-only {
+            height: 91%;
+        }
     }
 }

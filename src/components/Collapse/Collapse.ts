@@ -1,9 +1,10 @@
 import {Component, Input} from "angular2/core";
 import {CORE_DIRECTIVES} from "angular2/common";
+import {collapseHtml} from "./collapse.html";
 
 @Component({
     selector: "collapse",
-    templateUrl: 'components/Collapse/Collapse.html'
+    template: collapseHtml
 })
 
 export class Collapse {

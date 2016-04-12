@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from 'angular2/core';
 import {CORE_DIRECTIVES, SlicePipe} from 'angular2/common';
 import {RangePipe} from '../../pipes/Range/Range';
+import {paginationHtml} from './Pagination.html';
 
 @Component({
     selector: 'pagination',
@@ -9,8 +10,7 @@ import {RangePipe} from '../../pipes/Range/Range';
         "totalPages: total-pages",
         "pagesAtOnce: pages-at-once"
     ],
-    styleUrls: ['components/Pagination/Pagination.css'],
-    templateUrl: 'components/Pagination/Pagination.html',
+    template: paginationHtml,
     directives: [CORE_DIRECTIVES],
     pipes: [SlicePipe, RangePipe]
 })

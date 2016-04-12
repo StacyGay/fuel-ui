@@ -1,9 +1,10 @@
 import {Component, Input} from "angular2/core";
 import {CORE_DIRECTIVES} from "angular2/common";
+import {dropdownHtml} from "./dropdown.html";
 
 @Component({
     selector: "dropdown",
-    templateUrl: 'components/Dropdown/Dropdown.html'
+    template: dropdownHtml
 })
 
 export class Dropdown {

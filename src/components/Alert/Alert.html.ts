@@ -1,7 +1,8 @@
+export let alertHtml = `
 <div
     *ngIf="displayed"
     role="alert"
-    class="alert alertFadeIn"
+    class="alert alertFadeIn fui-alert"
     [ngClass]="{'alert-success': type === 'success', 'alert-info': type === 'info', 'alert-warning': type === 'warning', 'alert-danger': type === 'danger' }" >
     <button *ngIf="closeButton" (click)="close()" type="button" class="close" aria-label="Close">
         <span aria-hidden="true">&#215;</span>
@@ -9,3 +10,4 @@
     </button>
     <ng-content></ng-content>
 </div>
+`;

@@ -1,3 +1,4 @@
+export let carouselHtml = `
 <div class="carousel slide">
   <ol class="carousel-indicators">
     <li *ngFor="#image of images"
@@ -15,3 +16,4 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+`;

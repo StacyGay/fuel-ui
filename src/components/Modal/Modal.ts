@@ -1,14 +1,14 @@
 import {Component, ElementRef, Input, Output, EventEmitter} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {AnimationListener} from "../../directives/Animation/AnimationListener";
+import {modalHtml} from "./Modal.html";
 
 @Component({
 	selector: 'modal',
 	host:{
 		'(click)': 'clickElement($event)'
 	},
-	styleUrls: ['components/Modal/Modal.css'],
-	templateUrl: 'components/Modal/Modal.html',
+	template: modalHtml,
 	directives: [CORE_DIRECTIVES, AnimationListener]
 })
 export class Modal {

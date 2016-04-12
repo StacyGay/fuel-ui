@@ -1,3 +1,4 @@
+export let tableSortableHtml = `
 <table class="table table-hover table-striped table-sortable">
   <thead>
     <tr>
@@ -14,3 +15,4 @@
     </tr>
   </tbody>
 </table>
+`;

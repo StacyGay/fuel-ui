@@ -1,10 +1,10 @@
 import {Component, ElementRef, Input, Output, EventEmitter} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
+import {alertHtml} from "./Alert.html";
 
 @Component({
     selector: 'alert',
-    styleUrls: ['components/Alert/Alert.css'],
-    templateUrl: 'components/Alert/Alert.html',
+    template: alertHtml,
     directives: [CORE_DIRECTIVES]
 })
 export class Alert {

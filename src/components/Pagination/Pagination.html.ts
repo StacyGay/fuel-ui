@@ -1,5 +1,6 @@
+export let paginationHtml = `
 <nav>
-    <ul class="pagination">
+    <ul class="pagination fui-pagination">
         <li class="page-item" [class.disabled]="currentPage == 1">
             <a class="page-link" [attr.disabled]="currentPage == 1" (click)="setPage(1)" aria-label="First">
                 <span aria-hidden="true">First</span>
@@ -36,3 +37,4 @@
         <option *ngFor="#page of pagesBlank | range : 1 : totalPages" [value]="page" [selected]="page == currentPage">{{page}}</option>
     </select>
 </div>
+`;

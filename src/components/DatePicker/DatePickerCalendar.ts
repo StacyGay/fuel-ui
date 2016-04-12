@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core';
 import {Input, Output, EventEmitter, OnInit} from 'angular2/core';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
+import {datePickerCalendarHtml} from "./DatePickerCalendar.html";
 
 @Component({
 	selector: 'date-picker-calendar',
-	styleUrls: ['components/DatePicker/DatePickerCalendar.css'],
-	templateUrl: 'components/DatePicker/DatePickerCalendar.html',
+	template: datePickerCalendarHtml,
 	directives: [CORE_DIRECTIVES,FORM_DIRECTIVES]
 })
 export class DatePickerCalendar implements OnInit {

@@ -2,7 +2,7 @@
 
 $duration: 1s;
 
-.customFadeIn{
+.modalFadeIn{
   @include animation-name(fadeInDown);
   @include animation-duration($duration);
   @include animation-timing-function(ease);

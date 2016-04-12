@@ -29,7 +29,7 @@ export class Tooltip {
         this.hide();
 
         var html = `
-        <div class="tooltip top customFadeIn" role="tooltip">
+        <div class="tooltip top toolTipFadeIn" role="tooltip">
           <div class="tooltip-arrow"></div>
           <div class="tooltip-inner">
           ` + this.text + `
@@ -39,7 +39,7 @@ export class Tooltip {
 
         var newEl = document.createElement('div');
         newEl.setAttribute('role', 'tooltip');
-        newEl.className = 'tooltip top customFadeIn';
+        newEl.className = 'tooltip top toolTipFadeIn';
         newEl.innerHTML = `
         <div class="tooltip-arrow"></div>
           <div class="tooltip-inner">

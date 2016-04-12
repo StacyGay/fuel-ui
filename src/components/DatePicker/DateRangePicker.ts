@@ -6,11 +6,11 @@ import {MobileDetection} from "../../utilities/DetectionUtils";
 import {DatePicker} from "./DatePicker";
 import {DatePickerCalendar} from "./DatePickerCalendar";
 import {InfiniteScroller, INFINITE_SCROLLER_PROVIDERS} from "../InfiniteScroller/InfiniteScroller";
+import {dateRangePickerHtml} from "./DateRangePicker.html";
 
 @Component({
 	selector: "date-range-picker",
-	styleUrls: ['components/DatePicker/DatePicker.css'],
-	templateUrl: 'components/DatePicker/DateRangePicker.html',
+	template: dateRangePickerHtml,
 	directives: [DatePickerCalendar, INFINITE_SCROLLER_PROVIDERS, CORE_DIRECTIVES, FORM_DIRECTIVES],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })

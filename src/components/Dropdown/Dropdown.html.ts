@@ -1,3 +1,4 @@
+export let dropdownHtml = `
 <div class="dropdown open">
   <button class="btn btn-secondary" type="button" 
     aria-haspopup="true" aria-expanded="false" (click)="toggleDropdown()">
@@ -8,3 +9,4 @@
     <ng-content></ng-content>
   </div>
 </div>
+`;
